@@ -1,0 +1,292 @@
+/*--color-scheme----------------------------------------------------------------------- */
+
+:root {
+	/* background */
+  --darkgrey:		#282a36;
+  --medgrey:		#2e3440;
+  --lightgrey:	#3B4252;
+  --darkblue:		#1c1831;
+  /* highlight */
+  --blue:				#4d5d90;
+  --hotpink:		#e01752; /* not yet used */
+  --purple:			#660099; /* not yet used */
+  /* foreground */
+  --lightblue:	#add8e6;
+  --green:			#8FBCBB;
+  --yellow:			#EBCB8B;
+  --lightyellow:#dbe8c7;
+}
+
+::-webkit-scrollbar {
+  background: var(--medgrey);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+}
+
+body {
+	color: var(--green);
+	background-color: var(--darkgrey);
+}
+
+a {
+	color: #3bcf47;
+}
+
+/*--font------------------------------------------------------------------------------- */
+
+@font-face {
+	font-family: 'Titillium Web';
+  src: url(../fonts/TitilliumWeb-Regular.ttf);
+}
+
+body {
+	font-family: 'Titillium Web';
+	font-size:14px;
+}
+
+/*--general styles--------------------------------------------------------------------- */
+
+.center {
+	display: flex;
+	justify-content: center;
+}
+
+.space-between {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.scroll {
+	overflow-y:scroll;
+}
+
+.noscroll {
+	overflow: hidden;
+}
+
+.date {																									
+	white-space:nowrap; /* stops newline */
+	padding-left:15px;
+}
+
+/* todo: make the titles go over top of the dates instead */
+.beneath { /* stops text from pushing dates out of view */					
+	white-space:nowrap; 
+	overflow:hidden;
+	width:100%;
+}
+
+/*--general layout--------------------------------------------------------------------- */
+
+body, html {
+  height: 100vh;
+  margin:0;
+}
+
+h3, p {
+	margin:0px;
+}
+
+#big-grid{
+	display:grid;
+	height: 100%;
+	grid-template-columns: 33.33% 33.33% 33.33%;
+	grid-template-rows: min-content 1fr;
+	align-content: start;
+}
+
+#top-row {
+	grid-column: 1 / 4;
+}
+
+/* height set for scroll */
+#podcastListArea {
+	margin-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	height: calc(100vh - calc(22px + 16px + 4px + 15px))
+}
+
+/* height set for scroll */
+#episodeListArea {
+	padding-bottom: 10px;
+	height: calc(100vh - calc(90px + 22px + 16px + 4px + 22px + 16px + 4px + 10px));
+}
+
+#rightCol {
+	border-left: 2px solid var(--darkblue);
+}
+
+/* height set for scroll */
+#episodeDescArea {
+	/* height: 30vh; */
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	height: calc( calc(100vh - 103px) * .3 );
+}
+
+/* height set for scroll */
+#downloadListArea {
+	padding-bottom: 10px;
+	height: calc( calc(100vh - 113px) * .7 );
+}
+
+/*--buttons---------------------------------------------------------------------------- */
+
+.buttons-row {
+	padding: 8px;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+	color: var(--lightyellow);
+	background-color: var(--darkblue);
+	height: 22px;
+}
+
+input::file-selector-button, button {
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: 2px;
+	margin-right: 10px;
+}
+
+input::file-selector-button, button {
+	border-color: var(--lightyellow);
+	background-color: var(--darkgrey);
+	color: var(--lightyellow);
+}
+
+:disabled { /* for built-in disabled appearence */												
+	border-color: gray;
+	color: gray;
+}
+
+/*--rows------------------------------------------------------------------------------- */
+
+category-row div, podcast-row div {
+	color:var(--blue);
+	font-weight: bold;
+	padding-left: 8px;
+	margin-bottom: 1px;
+}
+
+podcast-row div {
+	margin-left: 12px;
+}
+
+category-row button {
+	margin-right: 0;
+}
+
+.category-holder span {
+	width: 100%;
+}
+
+episode-row div, download-row div {
+	padding-right: 5px;
+	padding-left: 2px;
+}
+
+/*--rows - user interaction------------------------------------------------------------ */
+
+category-row.selected div, podcast-row.selected div {
+	font-weight: bold;
+	background-color:var(--blue);
+}
+
+category-row.selected div {
+	color:var(--darkgrey);
+}
+
+podcast-row.disabled {
+	pointer-events:none;
+}
+
+podcast-row.disabled div {
+	color:black;
+}
+
+podcast-row.loaded div {
+	color:var(--green);
+	font-weight: normal;
+}
+
+episode-row.selected div, download-row.selected div {
+	color: black;
+	font-weight: bold;
+	background-color: var(--yellow);
+}
+
+download-row.hover div {
+	background-color:var(--lightgrey);
+}
+
+download-row.hover.selected div {
+	font-weight: normal;
+	color: var(--yellow);
+}
+
+/*--podcast-description---------------------------------------------------------------- */
+
+#podcastDescArea {
+	height: 90px;
+	overflow: hidden;
+}
+
+#podcastDescArea img {
+	float: left;
+	width: 90px;
+	height: 90px;
+	margin-right: 10px;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
+
+#podcastDescArea div {
+	height: 90px; /* to make the whole area clickable */
+	padding-bottom: 5px;
+}
+
+#podcastDescArea h3 {
+	display:inline;
+}
+
+/*--podcast-description-popup---------------------------------------------------------- */
+
+#popup {
+	position: absolute;
+	z-index: 1;
+	width: calc(66.66vw - 250px);
+
+	border-radius: 20px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: var(--lightblue);
+
+	padding: 8px;
+	background-color: var(--lightgrey);
+	color: var(--yellow);
+}
+
+#popup h3, #popup h4 {
+	display:inline;
+}
+
+/*--episode description---------------------------------------------------------------- */
+
+#episodeDescArea img, #episodeDescArea iframe {
+	width: 100%;
+	height: auto;
+}
+
+/*
+#episodeDescArea:hover {
+	background-color: var(--lightgrey);
+	color: var(--yellow);
+}
+*/

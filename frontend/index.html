@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/styles.css">
+	<script type="module" src="js/app.js"></script>
+</head>
+
+<body class="noscroll">
+	<div id="big-grid">
+
+		<!-- Top Row -->
+		<div id="top-row" class="buttons-row space-between">
+			<span>
+				<!-- note: btns inside span so they can't get squished b/c buttons-row height is set -->
+				<input id="btnLoadFile" type="file" accept=".txt, .xml, .opml" multiple="false" />
+			</span>
+			<span>
+				<button id="btnLoadAll" type="button">Load All Podcasts</button>
+			</span>
+		</div>
+
+		<!-- Left Column -->
+		<div id="podcastListArea" class="scroll"></div>
+
+		<!-- Center Column -->
+		<div class="noscroll">
+		    <div id="podcastDescArea">
+		    	<podcast-info></podcast-info>
+		    </div>
+		    <div class="buttons-row space-between">
+		    	<div id="timeBtns">
+					<button id="btnEarlier" type="button" disabled>Earlier</button>
+					<button id="btnLater" type="button" disabled>Later</button>
+					<button id="btnNow" type="button" disabled>Now</button>
+				</div>
+				<div>
+					<button id="btnUnselAll" type="button">None</button>
+					<button id="btnSelectAll" type="button">All</button>
+				</div>
+		    </div>
+		    <div id="episodeListArea" class="scroll"></div>
+		</div>
+
+		<!-- Right Column -->
+		<div id="rightCol">
+			<div id="episodeDescArea" class="scroll">
+				<episode-info></episode-info>
+			</div>
+			<div class="buttons-row space-between">
+				<span>
+					<button id="btnClearDl" type="button">Clear DL List</button>
+				</span>
+				<span>
+					<button id="btnGetJSON" type="button">Get JSON</button>
+					<button id="btnGetHtml" type="button">Get Html</button>
+				</span>
+			</div>
+			<div id="downloadListArea" class="scroll"></div>
+		</div>
+
+	</div>
+</body>
+</html>

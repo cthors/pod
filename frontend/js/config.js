@@ -1,0 +1,1 @@
+export const EPS_PER_PAGE = 20
