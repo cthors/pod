@@ -1,0 +1,26 @@
+<opml version="2.0">
+	<head>
+		<title>Casey's Test Podcast List</title>
+		<dateCreated>Sun, 12 Dec 2023 12:11:52 AST</dateCreated>
+		<ownerName>Casey Thorsen</ownerName>
+		<ownerId>https://hwsrv-640154.hostwindsdns.com/</ownerId>
+		<docs>http://opml.org/spec2.opml</docs>
+	</head>
+	<body>
+		<outline text="nature">
+			<outline text="Stumped." type="rss" xmlUrl="https://feeds.buzzsprout.com/1212722.rss" />
+		</outline>
+		<outline text="computers">
+			<outline type="rss" text="Modem Mischief" xmlUrl="https://modemmischief.libsyn.com/rss" />
+			<outline type="rss" text="Darknet Diaries" xmlUrl="https://feeds.megaphone.fm/darknetdiaries" />
+		</outline>
+		<outline text="misc">
+			<outline type="rss" text="The Drunken Taoist Podcast" xmlUrl="https://feeds.feedburner.com/thedrunkentaoist/6tq37zte9lw" />
+			<outline type="rss" text="Right Where You Are Sitting Now" xmlUrl="https://feed.podbean.com/sittingnowpodcast/feed.xml" />
+			<outline type="rss" text="Strange Exiles" xmlUrl="https://anchor.fm/s/3ba78754/podcast/rss" />
+			<outline type="rss" text="Contain Podcast" xmlUrl="https://anchor.fm/s/22c679fc/podcast/rss" />
+			<outline type="rss" text="The Magnificast" xmlUrl="https://feeds.transistor.fm/the-magnificast" />
+			<outline type="rss" text="Africville Forever" xmlUrl="https://feeds.simplecast.com/_Yob9w1X" />
+		</outline>
+	</body>
+</opml>
